@@ -13,12 +13,21 @@ function mustBeInArray(array, id) {
         const row = array.find(r => r.id == id)
         if (!row) {
             reject({
-                message: 'ID is not good',
+                message: 'ID no es válido',
                 status: 404
             })
         }
         resolve(row)
     })
+}
+
+function getNameProduct(array, id) {
+    const row = array.find(r => r.id == id)
+    if (row !== undefined) {
+        return row;
+    } else {
+        return false;
+    }
 }
 
 function writeJSONFile(filename, content) {
@@ -32,5 +41,6 @@ function writeJSONFile(filename, content) {
 module.exports = {
     getNewId,
     mustBeInArray,
-    writeJSONFile
+    writeJSONFile,
+    getNameProduct
 }
