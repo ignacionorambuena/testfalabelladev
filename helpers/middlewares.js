@@ -18,7 +18,18 @@ function checkFieldsProducts(req, res, next) {
     }
 }
 
+function checkFieldsSellProducts(req, res, next) {
+    const { id } = req.body
+
+    if (id) {
+        next()
+    } else {
+        res.status(400).json({ message: 'Debe contener el [ID] del producto' })
+    }
+}
+
 module.exports = {
     mustBeInteger,
-    checkFieldsProducts
+    checkFieldsProducts,
+    checkFieldsSellProducts
 }
