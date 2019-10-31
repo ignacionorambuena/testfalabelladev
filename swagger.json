@@ -1,0 +1,204 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentacion API para TestFalabellaDev",
+    "version": "1.0.0",
+    "title": "Swagger Falabella Dev",
+    "contact": {
+      "email": "ignacionorambuenag@gmail.com"
+    }
+  },
+  "host": "localhost",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "products",
+      "description": "Everything about your Pets"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/products": {
+      "post": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Agrega un nuevo producto para la venta",
+        "description": "",
+        "operationId": "addProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Producto para ser agregado al listado de ventas",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Producto ingresado de manera correcta"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Lista de productos disponibles para la venta",
+        "operationId": "listProducts",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Muestra listado de los productos",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Products"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sellProduct": {
+      "post": {
+        "tags": [
+          "sellProduct"
+        ],
+        "summary": "Vender un producto",
+        "description": "",
+        "operationId": "sellProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Producto para ser agregado al listado de ventas",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SellProducts"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Producto ingresado de manera correcta"
+          }
+        }
+      }
+    },
+    "/soldProduct": {
+      "get": {
+        "tags": [
+          "soldProduct"
+        ],
+        "summary": "Lista de productos vendidos",
+        "description": "",
+        "operationId": "soldProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/SoldProducts"
+            },
+            "description": "Listado de productos vendidos"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+      "flow": "implicit",
+      "scopes": {
+        "write:pets": "modify pets in your account",
+        "read:pets": "read your pets"
+      }
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Products": {
+      "type": "object",
+      "required": [
+        "nombre",
+        "sellIn",
+        "price"
+      ],
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "example": "Super duper"
+        },
+        "sellIn": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "xml": {
+        "name": "Products"
+      }
+    },
+    "SoldProducts": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "description": "Nombre del producto"
+        }
+      },
+      "xml": {
+        "name": "Products"
+      }
+    },
+    "SellProducts": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Id del producto a vender"
+        }
+      },
+      "xml": {
+        "name": "Products"
+      }
+    }
+  }
+}
