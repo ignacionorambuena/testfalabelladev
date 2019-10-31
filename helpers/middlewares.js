@@ -14,7 +14,7 @@ function checkFieldsProducts(req, res, next) {
     if (nombre && sellIn && price) {
         next()
     } else {
-        res.status(400).json({ message: 'fields are not good' })
+        res.status(400).json({ message: 'Los campos no son correctos' })
     }
 }
 
