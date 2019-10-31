@@ -7,6 +7,8 @@ app.use(morgan('tiny'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(require('./routes/index.routes'))
+app.use(require('./routes/sold-products.routes'))
+app.use(require('./routes/sell-product.routes'))
 
 //Routes
 app.get('/', (req, res) => {
