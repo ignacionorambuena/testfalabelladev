@@ -1,8 +1,8 @@
 function mustBeInteger(req, res, next) {
-    const id = req.params.id
+    const id = req.params.id ? req.params.id : req.params.days
 
     if (!Number.isInteger(parseInt(id))) {
-        res.status(400).json({ message: 'ID must be an integer' })
+        res.status(400).json({ message: 'Debe ingresar un número entero' })
     } else {
         next()
     }

@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(require('./routes/index.routes'))
 app.use(require('./routes/sold-products.routes'))
 app.use(require('./routes/sell-product.routes'))
+app.use(require('./routes/evaluate-products.routes'))
 
 //Routes
 app.get('/', (req, res) => {
