@@ -100,6 +100,15 @@ function getEvaluateProducts(days) {
                         });
                         console.log(prd.id, ',', prd.nombre, ',', prd.sellIn - 1, ',', prd.sellIn <= 10 && prd.sellIn >= 5 && prd.price <= 100 ? prd.price + 2 : prd.sellIn < 5 && prd.sellIn > 0 && prd.price < 100 ? prd.price + 3 : prd.sellIn == 0 ? 0 : prd.sellIn < 0 ? 0 : prd.price >= 100 ? 100 : prd.price + 1);
                         break;
+                    case 6: // Super avance
+                        temp.push({
+                            id: prd.id,
+                            nombre: prd.nombre,
+                            sellIn: prd.sellIn - 1,
+                            price: prd.price <= 0 ? 0 : prd.price - 2
+                        });
+                        console.log(prd.id, ',', prd.nombre, ',', prd.sellIn, ',', prd.price <= 0 ? 0 : prd.price - 2);
+                        break;
                 }
             });
             data.push({ dia: i, products: temp });
@@ -152,6 +161,15 @@ function getEvaluateProducts(days) {
                             price: prd.sellIn <= 10 && prd.sellIn >= 5 && prd.price < 100 ? prd.price + 2 : prd.sellIn <= 5 && prd.sellIn > 0 && prd.price <= 100 ? prd.price + 3 : prd.sellIn == 0 ? 0 : prd.sellIn < 0 ? 0 : prd.price >= 100 ? 100 : prd.price + 1
                         };
                         console.log(prd.id, ',', prd.nombre, ',', prd.sellIn - 1, ',', prd.sellIn <= 10 && prd.sellIn >= 5 && prd.price <= 100 ? prd.price + 2 : prd.sellIn < 5 && prd.sellIn > 0 && prd.price < 100 ? prd.price + 3 : prd.sellIn == 0 ? 0 : prd.sellIn < 0 ? 0 : prd.price >= 100 ? 100 : prd.price + 1);
+                        break;
+                    case 6: // Super avance
+                        temp[idx] = {
+                            id: prd.id,
+                            nombre: prd.nombre,
+                            sellIn: prd.sellIn - 1,
+                            price: prd.price <= 0 ? 0 : prd.price - 2
+                        };
+                        console.log(prd.id, ',', prd.nombre, ',', prd.sellIn, ',', prd.price <= 0 ? 0 : prd.price - 2);
                         break;
                 }
             });
