@@ -1,7 +1,7 @@
 # Test Falabella Dev
 Proyecto desarrollado en NodeJs
 
-##Instalación
+## Instalación
 
 Para iniciar el aplicativo debe ingresar el siguiente comando.
 
