@@ -9,7 +9,7 @@
         "id": 2,
         "nombre": "Full cobertura",
         "sellIn": 2,
-        "price": 0
+        "price": 40
     },
     {
         "id": 3,
@@ -20,35 +20,17 @@
     {
         "id": 4,
         "nombre": "Mega cobertura",
-        "sellIn": 0,
-        "price": 80
+        "sellIn": 12,
+        "price": 180
     },
     {
         "id": 5,
-        "nombre": "Mega cobertura",
-        "sellIn": -1,
+        "nombre": "Full cobertura super duper",
+        "sellIn": 15,
         "price": 80
     },
     {
         "id": 6,
-        "nombre": "Full cobertura super duper",
-        "sellIn": 15,
-        "price": 20
-    },
-    {
-        "id": 7,
-        "nombre": "Full cobertura super duper",
-        "sellIn": 10,
-        "price": 49
-    },
-    {
-        "id": 8,
-        "nombre": "Full cobertura super duper",
-        "sellIn": 5,
-        "price": 49
-    },
-    {
-        "id": 9,
         "nombre": "Super avance",
         "sellIn": 3,
         "price": 6
