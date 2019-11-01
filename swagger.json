@@ -106,14 +106,14 @@
         }
       }
     },
-    "/soldProduct": {
+    "/soldProducts": {
       "get": {
         "tags": [
-          "soldProduct"
+          "soldProducts"
         ],
         "summary": "Lista de productos vendidos",
         "description": "",
-        "operationId": "soldProduct",
+        "operationId": "soldProducts",
         "consumes": [
           "application/json"
         ],
